@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+    <title>农产品贷款服务</title>
+  </head>
+  <body>
+    <div id="loanApplicationModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span class="close" onclick="closeLoanApplicationModal()">&times;</span>
+        <h2>申请贷款</h2>
+        <form
+          id="loanApplicationForm"
+          onsubmit="event.preventDefault(); alert('贷款申请已提交，我们将尽快与您联系。'); closeLoanApplicationModal();"
+        >
+          <!-- 贷款申请表单内容 -->
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="姓名"
+            required
+          />
+          <select id="gender" name="gender" required>
+            <option value="">性别</option>
+            <option value="male">男</option>
+            <option value="female">女</option>
+          </select>
+          <input
+            type="text"
+            id="idNumber"
+            name="idNumber"
+            placeholder="身份证号码"
+            required
+          />
+          <input
+            type="number"
+            id="loanAmount"
+            name="loanAmount"
+            placeholder="贷款额度"
+            required
+          />
+          <input
+            type="text"
+            id="loanTerm"
+            name="loanTerm"
+            placeholder="期限"
+            required
+          />
+          <input
+            type="text"
+            id="collateral"
+            name="collateral"
+            placeholder="抵押物"
+            required
+          />
+          <button type="submit">提交申请</button>
+        </form>
+      </div>
+    </div>
+
+    <nav class="container-fluid">
+      <ul>
+        <li>
+          <strong
+            ><img
+              src="https://source.unsplash.com/random/100x50?farm"
+              alt="Logo"
+          /></strong>
+        </li>
+      </ul>
+      <ul>
+        <li><a href="#home" onclick="showSection('home')">首页</a></li>
+        <li>
+          <a href="#personal" onclick="showSection('personal')">个人业务</a>
+        </li>
+        <li>
+          <a href="#business" onclick="showSection('business')">公司业务</a>
+        </li>
+        <li><a href="#">咨询</a></li>
+        <li><a href="#" role="button">抵押物状况</a></li>
+      </ul>
+      <ul>
+        <li><a href="#" onclick="showLoginModal()">登录</a></li>
+        <li><a href="#" onclick="showRegisterModal()">注册</a></li>
+      </ul>
+    </nav>
+    <main class="container" id="mainContent">
+      <div id="home" class="section">
+        <h2>农产品贷款产品介绍</h2>
+        <p>尊敬的客户，</p>
+        <p>
+          欢迎您来到我们的农产品贷款平台。我们为您提供多种灵活的贷款产品，旨在支持您的农业生产和经营。以下是我们的贷款产品介绍：
+        </p>
+        <ul>
+          <li>
+            <strong>农业生产贷款</strong>：
+            <ul>
+              <li>
+                用途：支持种植、养殖、农业生产相关的资金需求，包括购买种子、化肥、农药、饲料等。
+              </li>
+              <li>
+                贷款额度：根据您的生产规模和资金需求，最高可达到一定比例的生产成本。
+              </li>
+              <li>期限：灵活的还款期限，根据您的生产周期和经营情况制定。</li>
+            </ul>
+          </li>
+          <li>
+            <strong>农业设备贷款</strong>：
+            <ul>
+              <li>用途：用于购买农业机械设备、灌溉设备、农用车辆等。</li>
+              <li>
+                贷款额度：根据设备价格和您的还款能力确定，可贷款比例较高，灵活应对您的设备采购需求。
+              </li>
+              <li>
+                期限：长期或中长期，根据设备寿命周期和您的经营计划制定合适的还款期限。
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>农村金融扶贫贷款</strong>：
+            <ul>
+              <li>面向贫困地区农民及小农户，支持其农业生产和生活改善。</li>
+              <li>
+                贷款额度：根据扶贫政策和您的贫困程度确定，享受更优惠的利率和还款条件。
+              </li>
+              <li>期限：灵活的还款期限，根据您的实际情况制定。</li>
+            </ul>
+          </li>
+          <li>
+            <strong>农业项目融资</strong>：
+            <ul>
+              <li>面向农业产业化、现代农业示范项目等，提供专项融资支持。</li>
+              <li>
+                贷款额度：根据项目规模和投资需求确定，可提供较长的融资期限和灵活的还款方式。
+              </li>
+              <li>期限：根据项目周期和收益情况制定。</li>
+            </ul>
+          </li>
+        </ul>
+        <p>
+          我们的贷款产品均有专业的贷款顾问团队为您提供全程服务，协助您完成贷款申请和后续管理。同时，我们承诺提供灵活、便捷、安全的贷款服务，致力于与您共同发展农业产业。
+        </p>
+        <p>感谢您选择我们的服务，期待与您携手共创美好未来！</p>
+        <p>如有任何疑问或需要进一步了解，欢迎随时联系我们的客服团队。</p>
+      </div>
+      <div id="personal" class="section" style="display: none">
+        <h2>个人业务</h2>
+        <p>我们为个人客户提供贴心的贷款服务，解决您的资金需求。</p>
+        <img
+          src="https://source.unsplash.com/random/600x300?personal-finance"
+          alt="个人业务"
+        />
+        <button onclick="applyForLoan()">申请贷款</button>
+      </div>
+      <div id="business" class="section" style="display: none">
+        <h2>公司业务</h2>
+        <div id="businessContent">请登录以查看公司业务详情。</div>
+        <img
+          src="https://source.unsplash.com/random/600x300?warehouse"
+          alt="公司业务"
+        />
+      </div>
+    </main>
+    <div id="loginModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span class="close" onclick="closeLoginModal()">&times;</span>
+        <h2>登录</h2>
+        <form id="loginForm" onsubmit="handleLogin(event)">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="邮箱"
+            aria-label="邮箱"
+            required
+          />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="密码"
+            aria-label="密码"
+            required
+          />
+          <button type="submit">登录</button>
+        </form>
+      </div>
+    </div>
+    <div id="registerModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span class="close" onclick="closeRegisterModal()">&times;</span>
+        <h2>注册</h2>
+        <form
+          id="registerForm"
+          onsubmit="event.preventDefault(); alert('注册功能暂未开放。');"
+        >
+          <input
+            type="email"
+            id="regEmail"
+            name="email"
+            placeholder="邮箱"
+            aria-label="注册邮箱"
+            required
+          />
+          <input
+            type="password"
+            id="regPassword"
+            name="password"
+            placeholder="密码"
+            aria-label="注册密码"
+            required
+          />
+          <button type="submit">注册</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      var isLoggedIn = false;
+
+      function showSection(sectionId) {
+        var sections = document.querySelectorAll(".section");
+        sections.forEach(function (sec) {
+          sec.style.display = "none";
+        });
+        document.getElementById(sectionId).style.display = "block";
+      }
+
+      function showLoginModal() {
+        document.getElementById("loginModal").style.display = "block";
+      }
+
+      function closeLoginModal() {
+        document.getElementById("loginModal").style.display = "none";
+      }
+
+      function showRegisterModal() {
+        document.getElementById("registerModal").style.display = "block";
+      }
+
+      function closeRegisterModal() {
+        document.getElementById("registerModal").style.display = "none";
+      }
+
+      function handleLogin(event) {
+        event.preventDefault();
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        if (email === "2261484633@qq.com" && password === "13598913716") {
+          alert("登录成功！");
+          isLoggedIn = true;
+          closeLoginModal();
+          if (document.getElementById("business").style.display === "block") {
+            showBusinessDetails();
+          }
+        } else {
+          alert("邮箱或密码错误，请重试。");
+        }
+      }
+
+      function showBusinessDetails() {
+        document.getElementById("businessContent").innerHTML =
+          "<h3>抵押物价值</h3><p>100,000元</p><h3>抵押时间</h3><p>12个月</p>";
+      }
+
+      function applyForLoan() {
+        if (!isLoggedIn) {
+          alert("请先登录！");
+          showLoginModal();
+        } else {
+          // 显示申请贷款的模态窗口
+          showLoanApplicationModal();
+        }
+      }
+
+      function showLoanApplicationModal() {
+        document.getElementById("loanApplicationModal").style.display = "block";
+      }
+
+      function closeLoanApplicationModal() {
+        document.getElementById("loanApplicationModal").style.display = "none";
+      }
+    </script>
+    <footer class="container">
+      <small><a href="#">关于我们</a> • <a href="#">联系我们</a></small>
+    </footer>
+  </body>
+</html>
